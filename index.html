@@ -14,39 +14,70 @@
 
   <!-- Rating state start -->
   <div class="container">
-    <div class="card">
-      <div class="icon-star">
-        <img src="images/icon-star.svg" alt="" srcset="">
-      </div>
-      <h3 class="title">How did we do?</h3>
-      <p class="desc">
+    <div class="card" id="card">
+      <!-- Card 1 -->
+      <div id="card-1">
+        <div class="icon-star" id="icon-star">
+          <img src="images/icon-star.svg" alt="" srcset="">
+        </div>
+        <h3 class="title">How did we do?</h3>
+        <p class="desc">
           Please let us know how we did with your support request. All feedback is appreciated
           to help us improve our offering!
-      </p>
-      <div class="rating">
-        <div class="rating-1">1</div>
-        <div class="rating-2">2</div>
-        <div class="rating-3">3</div>
-        <div class="rating-4">4</div>
-        <div class="rating-5">5</div>
+        </p>
+        <div class="rating">
+          <div class="rating-1">1</div>
+          <div class="rating-2">2</div>
+          <div class="rating-3">3</div>
+          <div class="rating-4">4</div>
+          <div class="rating-5">5</div>
+        </div>
+        <!-- script for rating -->
+        <script>
+          const ratings = document.querySelectorAll('.rating div');
+
+          ratings.forEach(rating => {
+            rating.addEventListener('click', function () {
+              ratings.forEach(r => r.classList.remove('active'));
+              this.classList.add('active');
+            });
+          });
+        </script>
+        <button type="submit" onclick="submit()">SUBMIT</button>
       </div>
-      <button type="submit">SUBMIT</button>
+      <!-- / Card 1 -->
+      <!-- Card 2 -->
+      <div id="card-2">
+       <div class="img">
+        <img class="img-thx" src="images/illustration-thank-you.svg" alt="" srcset="">
+       </div>
+       <div class="selected-rating">
+        <p>You selected 4 out of 5</p>
+       </div>
+       <div class="title-thx">
+        <h1>Thank you!</h1>
+       </div>
+       <div class="thx-desc">
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+       </div>
+      </div>
+
     </div>
+          <script>
+            function submit() {
+              var card = document.getElementById('card-1');
+              card.style.display = 'none';
+              var card2 = document.getElementById('card-2');
+              card2.style.display = 'block';
+
+              // var card2 = document.createElement('div');
+              // card2.className = 'card';
+              // card2.style.display = 'block';
+              // card2.innerHTML = '<h1>' + card.innerHTML + '</h1>';
+              // document.body.appendChild(card2);
+            }
+          </script>
   </div>
-
-  <!-- Rating state end -->
-
-  <!-- Thank you state start -->
-
-  <!-- You selected <!-- Add rating here  out of 5 -->
-<!--
-  Thank you!
-
-  We appreciate you taking the time to give a rating. If you ever need more support,
-  don’t hesitate to get in touch! -->
-
-  <!-- Thank you state end -->
-
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
