@@ -151,3 +151,61 @@ body {
 .attribution a {
     color: hsl(228, 45%, 44%);
 }
+
+/* For Mobile */
+@media (max-width: 375px) {
+    .card {
+        width: 250px;
+        height: 300px;
+        border-radius: 10px;
+        padding: 30px;
+    }
+
+    .card .icon-star {
+        width: 15px;
+        height: 15px;
+        padding: 15px;
+    }
+
+    .card .title {
+        font-size: 22px;
+    }
+
+    .card .desc {
+        margin-top: 5px;
+        line-height: 20px;
+    }
+
+    .card .rating div {
+        width: 15px;
+        height: 15px;
+        padding: 10px;
+        border-radius: 50%;
+    }
+
+    .card button {
+        margin: 20px 0 0 0;
+        padding: 12px 0;
+        border-radius: 30px;
+        font-weight: bold;
+        font-size: 12px;
+    }
+
+    #card-2 .img {
+        margin: 10px;
+    }
+
+    #card-2 .selected-rating {
+        margin: 10px;
+        border-radius: 15px;
+        padding: 7px 15px;
+    }
+
+    #card-2 .title-thx h1 {
+        font-size: 24px;
+    }
+
+    .thx-desc p {
+        font-size: 16px;
+    }
+}
