@@ -26,57 +26,57 @@
           to help us improve our offering!
         </p>
         <div class="rating">
-          <div class="rating-1">1</div>
-          <div class="rating-2">2</div>
-          <div class="rating-3">3</div>
-          <div class="rating-4">4</div>
-          <div class="rating-5">5</div>
+          <div class="rating-1" id="1">1</div>
+          <div class="rating-2" id="2" >2</div>
+          <div class="rating-3" id="3">3</div>
+          <div class="rating-4" id="4">4</div>
+          <div class="rating-5" id="5" >5</div>
         </div>
         <!-- script for rating -->
         <script>
           const ratings = document.querySelectorAll('.rating div');
-
           ratings.forEach(rating => {
             rating.addEventListener('click', function () {
               ratings.forEach(r => r.classList.remove('active'));
               this.classList.add('active');
+              if (rating.classList.contains('active')) {
+                ratingId = rating.id;
+              }
             });
           });
+
+          function submit() {
+            var card = document.getElementById('card-1');
+            card.style.display = 'none';
+            var card2 = document.getElementById('card-2');
+            card2.style.display = 'block';
+            if (card2.style.display == 'block') {
+              if (ratingId !== null){
+                const result = document.getElementById('rating-result');
+                result.innerHTML = 'You selected ' + ratingId + ' out of 5';
+              }
+            }
+          }
         </script>
         <button type="submit" onclick="submit()">SUBMIT</button>
       </div>
       <!-- / Card 1 -->
       <!-- Card 2 -->
       <div id="card-2">
-       <div class="img">
-        <img class="img-thx" src="images/illustration-thank-you.svg" alt="" srcset="">
-       </div>
-       <div class="selected-rating">
-        <p>You selected 4 out of 5</p>
-       </div>
-       <div class="title-thx">
-        <h1>Thank you!</h1>
-       </div>
-       <div class="thx-desc">
-        <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
-       </div>
+        <div class="img">
+          <img class="img-thx" src="images/illustration-thank-you.svg" alt="" srcset="">
+        </div>
+        <div class="selected-rating">
+          <p id="rating-result"></p>
+        </div>
+        <div class="title-thx">
+          <h1>Thank you!</h1>
+        </div>
+        <div class="thx-desc">
+          <p>We appreciate you taking the time to give a rating. If you ever need more support, don't hesitate to get in touch!</p>
+        </div>
       </div>
-
     </div>
-          <script>
-            function submit() {
-              var card = document.getElementById('card-1');
-              card.style.display = 'none';
-              var card2 = document.getElementById('card-2');
-              card2.style.display = 'block';
-
-              // var card2 = document.createElement('div');
-              // card2.className = 'card';
-              // card2.style.display = 'block';
-              // card2.innerHTML = '<h1>' + card.innerHTML + '</h1>';
-              // document.body.appendChild(card2);
-            }
-          </script>
   </div>
 
   <div class="attribution">
